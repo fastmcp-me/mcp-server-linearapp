@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "linear": {
+      "command": "./.cursor/mcp-run",
+      "args": ["./dist/index.js"]
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "env": {
+        "MEMORY_FILE_PATH": "./.cursor/memory.json"
+      }
+    },
+    "tavily": {
+      "command": "npx",
+      "args": ["-y", "@mcptools/mcp-tavily"]
+    }
+  }
+}

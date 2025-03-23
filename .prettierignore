@@ -1,0 +1,18 @@
+# Build outputs
+dist/
+build/
+coverage/
+
+# Node modules
+node_modules/
+
+# Cache directories
+.parcel-cache/
+
+# Package files
+package-lock.json
+yarn.lock
+
+# Git files
+.git/
+.github/ 

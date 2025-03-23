@@ -1,0 +1,24 @@
+#! /bin/bash
+
+# Get the directory where this script is located
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Load environment variables from .env file in the script directory
+if [ -f "$SCRIPT_DIR/.env" ]; then
+    source "$SCRIPT_DIR/.env"
+fi
+
+# Load environment variables from .env file
+if [ -f ".env" ]; then
+    source .env
+fi
+
+# Check if arguments were provided
+if [ $# -eq 0 ]; then
+    echo "Error: No command specified."
+    echo "Usage: $0 command [args...]"
+    exit 1
+fi
+
+
+"$@"
