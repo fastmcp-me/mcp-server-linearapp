@@ -25,21 +25,8 @@ jobs:
       - name: Install dependencies
         run: npm ci --include=optional
 
-      - name: Run tests
-        run: npm test
-        env:
-          LINEAR_API_KEY: lin_api_dummy_linear_api_key_123
-
-      - name: Run linting
-        run: npm run lint
-
-      - name: Run type checking
-        run: npm run typecheck
-
-      - name: Build
-        run: npm run build
-
       - name: Publish to NPM
         run: npm publish --access public
         env:
+          LINEAR_API_KEY: lin_api_dummy_linear_api_key_123
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
